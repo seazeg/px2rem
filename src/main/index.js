@@ -1,9 +1,11 @@
 import {
   app,
   BrowserWindow,
-  Menu
+  Menu,
+  ipcMain
 } from 'electron'
 
+require('./ipc');
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -22,9 +24,15 @@ function createWindow() {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 800,
+    height: 370,
+    width: 600,
     useContentSize: true,
-    width: 1280
+    resizable: true,
+    fullscreen: false,
+    frame: false,
+    webPreferences: {
+      webSecurity: false
+    }
   })
 
   // mainWindow.webContents.openDevTools()
@@ -65,9 +73,18 @@ function createWindow() {
   } else {
     Menu.setApplicationMenu(null)
   }
-
-
 }
+
+// 利用ipc让html标签获取主进程的方法,最小化,最大化,关闭
+ipcMain.on('min', e => mainWindow.minimize());
+ipcMain.on('max', e => {
+  if (mainWindow.isMaximized()) {
+    mainWindow.unmaximize()
+  } else {
+    mainWindow.maximize()
+  }
+});
+ipcMain.on('close', e => mainWindow.close());
 
 app.on('ready', createWindow)
 

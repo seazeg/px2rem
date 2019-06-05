@@ -2,10 +2,10 @@ import Vue from 'vue'
 
 import App from './App'
 import router from './router'
-import $ from 'jquery'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import egUtils from 'eg-utils'
+import './components/index'
 
 Vue.use(iView);
 

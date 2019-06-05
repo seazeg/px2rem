@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/',
       name: 'px2rem',
-      component: require('@/components/px2rem').default
+      component: require('@/view/home').default
     },
     {
       path: '*',

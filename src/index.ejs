@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>html2css</title>
+    <title>px2rem</title>
     <% if (htmlWebpackPlugin.options.nodeModules) { %>
       <!-- Add `node_modules/` to global paths so `require` works properly in development -->
       <script>
@@ -10,7 +10,7 @@
       </script>
     <% } %>
   </head>
-  <body>
+  <body id="dropBox">
     <div id="app"></div>
     <!-- Set `__static` path to static files in production -->
     <% if (!process.browser) { %>
@@ -19,7 +19,9 @@
       </script>
     <% } %>
     <!-- webpack builds are automatically injected -->
-    <script src="../electron/static/jquery-2.0.3.min.js"></script>
-    <script src="../electron/static/jquery-extend.js"></script>
+    <!-- <script src="../electron/static/jquery-2.0.3.min.js"></script>
+    <script src="../electron/static/jquery-extend.js"></script> -->
+    <script src="../static/jquery-2.0.3.min.js"></script>
+    <script src="../static/jquery-extend.js"></script>
   </body>
 </html>
