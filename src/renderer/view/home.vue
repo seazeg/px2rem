@@ -6,11 +6,8 @@
     </div>
 </template>
 <script>
-    const {
-        ipcRenderer: ipc
-    } = require('electron');
+    import '../utils/core';
     let dropBox;
-
     window.onload = function () {
         dropBox = document.getElementById("dropBox");
         dropBox.ondragenter = ignoreDrag;
@@ -19,10 +16,8 @@
     }
 
     function ignoreDrag(e) {
-        //因为我们在处理拖放，所以应该确保没有其他元素会取得这个事件
         e.stopPropagation();
         e.preventDefault();
-
     }
 
     function drop(e) {

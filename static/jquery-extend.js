@@ -3,7 +3,6 @@
     /**
 	 * utility function called from constructor of Formatter
 	 */
-
     
     function createShiftArr(step) {
         var space = '    ';
