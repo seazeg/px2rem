@@ -27,7 +27,7 @@ function createWindow() {
     height: 370,
     width: 600,
     useContentSize: true,
-    resizable: true,
+    resizable: false,
     fullscreen: false,
     frame: false,
     webPreferences: {

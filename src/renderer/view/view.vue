@@ -1,8 +1,6 @@
 <template>
     <div class="drop-box">
-        <div class="px2rem">
-
-        </div>
+        <div class="logo"></div>
     </div>
 </template>
 <script>
@@ -12,16 +10,16 @@
     }
 </script>
 <style>
-    .px2rem {
-        width: 200px;
-        height: 200px;
+    .logo {
+        width: 1000px;
+        height: 1000px;
         background: url('../assets/change.png') no-repeat;
         background-position: center;
-        background-size: 100%;
+        background-size: 25%;
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 30px;
+        bottom: 0;
         right: 0;
         margin: auto;
         z-index:0

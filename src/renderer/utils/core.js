@@ -6,7 +6,7 @@ import fs from 'fs';
 ipcRenderer.on('files-reply', function (event, arg) {
     let list = [];
     for (let item of arg) {
-        let filepath = item.replace(/\\/g, "/")
+        let filepath = item.filePath.replace(/\\/g, "/")
         converter(filepath,'r2p')
     }
 });

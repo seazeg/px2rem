@@ -4,6 +4,9 @@
             <a class="close" @click="winHandle('close')"></a>
             <a class="min" @click="winHandle('min')"></a>
         </div>
+        <div class="title">
+            PX2REM
+        </div>
     </div>
 </template>
 <script>
@@ -16,9 +19,6 @@
             winHandle(type) {
                 ipc.send(type);
             }
-        },
-        mounted() {
-
         }
     }
 </script>

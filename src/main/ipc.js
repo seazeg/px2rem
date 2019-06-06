@@ -27,42 +27,10 @@ ipcMain.on('open-message', function (e, arg) {
 ipcMain.on('files-message', function (e, arg) {
     let filePath = path.resolve(dirpath);
     filePath = (JSON.parse(arg)).filePath;
-    fileDisplay(filePath, function (fileList) {
-        e.sender.send('files-reply', fileList);
-    });
+    e.sender.send('files-reply', JSON.parse(arg));
 });
 
 
-function fileDisplay(filePath, callback) {
-    //根据文件路径读取文件，返回文件列表
-    fs.readdir(filePath, function (err, files) {
-        if (err) {
-            console.warn(err)
-        } else {
-            //遍历读取到的文件列表
-            let list = []
-            files.forEach(function (filename) {
-                //获取当前文件的绝对路径
-                let filedir = path.join(filePath, filename);
-                let isCSS = function () {
-                    let res = false;
-                    let imgType = ['css','CSS'];
-                    for (let i in imgType) {
-                        if (filename.split(".")[1] == imgType[i]) {
-                            res = true
-                        }
-                    }
-                    return res
-                }
-                if (isCSS()) {
-                    list.push(filedir)
-
-                }
-            });
-            callback(list);
-        }
-    });
-}
 
 
 

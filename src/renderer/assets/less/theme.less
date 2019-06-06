@@ -18,7 +18,8 @@
 }
 
 //标题
-.layout-header {
+.layout-header,
+.layout-footer {
     color: @font_w_color;
     height: 40px;
     position: relative;
@@ -29,8 +30,15 @@
     -webkit-app-region: drag;
 }
 
+.layout-footer {
+    text-align: center;
+    font-size:14px;
+    color:@font_g_color;
+}
+
 .layout-header .tools {
     margin: 5px;
+    display: inline-block;
 }
 
 .layout-header .tools>a {
@@ -40,7 +48,7 @@
     display: inline-block;
     margin: 0 2px;
     cursor: pointer;
-    color:@font_b_color;
+    color: @font_b_color;
 }
 
 .layout-header .tools .close {
@@ -49,6 +57,13 @@
 
 .layout-header .tools .min {
     background: #f7c552;
+}
+
+.layout-header .title {
+    display: inline-block;
+    position: relative;
+    left: 230px;
+    color:@font_g_color;
 }
 
 //工作区
@@ -60,53 +75,79 @@
     -webkit-app-region: drag;
 }
 
+.layout-container {
+    -webkit-flex: 1;
+    flex: 1;
+    position: relative;
+    color: @font_w_color;
+    -webkit-app-region: drag;
+}
+
 .layout-container .drop-box {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    left: -200px;
+    top: 50%;
 }
 
 //交互动画
 .dragstatus {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    opacity: 0.8;
+
 }
 
-@keyframes rotate{
- 
-    0%{-webkit-transform:rotate(0deg);}
+@keyframes rotate {
 
-    25%{-webkit-transform:rotate(90deg);}
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
 
-    50%{-webkit-transform:rotate(180deg);}
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
 
-    75%{-webkit-transform:rotate(270deg);}
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
 
-    100%{-webkit-transform:rotate(360deg);}
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
-@-webkit-keyframes rotate{
- 
-    0%{-webkit-transform:rotate(0deg);}
+@-webkit-keyframes rotate {
 
-    25%{-webkit-transform:rotate(90deg);}
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
 
-    50%{-webkit-transform:rotate(180deg);}
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
 
-    75%{-webkit-transform:rotate(270deg);}
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
 
-    100%{-webkit-transform:rotate(360deg);}
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
-.dragstatus .px2rem{
+.dragstatus .logo {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-   width:220px;
-   height:220px;
-   animation:rotate .8s linear infinite;
-   -webkit-animation:rotate .8s linear infinite;
+    background-size: 30%;
+    animation: rotate 1.8s linear infinite;
+    -webkit-animation: rotate 1.8s linear infinite;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
 }
-

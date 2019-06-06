@@ -3,35 +3,38 @@ import {
 } from 'electron'
 
 window.onload = function () {
+    let logo = $('.logo')
     $('#dropBox').on({
         'drop': function (e) {
             e.stopPropagation();
             e.preventDefault();
+            let fileList = [];
             let files = e.originalEvent.dataTransfer.files;
-            let obj = {
-                fileName: files[0].name,
-                filePath: files[0].path.replace(/\\/g, "/").replace(files[0].name, ""),
-                fileType: files[0].type,
-                fileSize: files[0].size
+            for(let file of files){
+                fileList.push({
+                    fileName: file.name,
+                    filePath: file.path,
+                    fileType: file.type,
+                    fileSize: file.size
+                })
             }
-            ipcRenderer.send('files-message', JSON.stringify(obj));
-            $('.main-container').removeClass('dragstatus')
+            ipcRenderer.send('files-message', JSON.stringify(fileList));
+            logo.css('animation-play-state','paused')
         },
         'dragover': function (e) {
             e.stopPropagation();
             e.preventDefault();
-            
-            if(e.target.className == 'px2rem'){
-                $('.main-container').addClass('dragstatus')
-            }
+            logo.css('animation-play-state','running')
         },
         'dragleave': function (e) {
             e.stopPropagation();
             e.preventDefault();
-            console.log(e);
-            if(e.target.className != 'drop-box'){
-                $('.main-container').removeClass('dragstatus')
-            }
+            setTimeout(() => {
+                logo.css('animation-play-state','paused')
+            }, 500);
+            
         }
     })
 }
+
+
