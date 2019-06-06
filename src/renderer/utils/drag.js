@@ -7,7 +7,6 @@ window.onload = function () {
         'drop': function (e) {
             e.stopPropagation();
             e.preventDefault();
-            console.log(e);
             let files = e.originalEvent.dataTransfer.files;
             let obj = {
                 fileName: files[0].name,
@@ -16,16 +15,23 @@ window.onload = function () {
                 fileSize: files[0].size
             }
             ipcRenderer.send('files-message', JSON.stringify(obj));
+            $('.main-container').removeClass('dragstatus')
         },
         'dragover': function (e) {
             e.stopPropagation();
             e.preventDefault();
-            $('.main-container').addClass('dragstatus')
+            
+            if(e.target.className == 'px2rem'){
+                $('.main-container').addClass('dragstatus')
+            }
         },
         'dragleave': function (e) {
             e.stopPropagation();
             e.preventDefault();
-            $('.main-container').removeClass('dragstatus')
+            console.log(e);
+            if(e.target.className != 'drop-box'){
+                $('.main-container').removeClass('dragstatus')
+            }
         }
     })
 }

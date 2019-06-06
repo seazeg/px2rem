@@ -70,14 +70,43 @@
 
 //交互动画
 .dragstatus {
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
     opacity: 0.8;
 }
 
+@keyframes rotate{
+ 
+    0%{-webkit-transform:rotate(0deg);}
+
+    25%{-webkit-transform:rotate(90deg);}
+
+    50%{-webkit-transform:rotate(180deg);}
+
+    75%{-webkit-transform:rotate(270deg);}
+
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@-webkit-keyframes rotate{
+ 
+    0%{-webkit-transform:rotate(0deg);}
+
+    25%{-webkit-transform:rotate(90deg);}
+
+    50%{-webkit-transform:rotate(180deg);}
+
+    75%{-webkit-transform:rotate(270deg);}
+
+    100%{-webkit-transform:rotate(360deg);}
+}
+
 .dragstatus .px2rem{
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
    width:220px;
    height:220px;
+   animation:rotate .8s linear infinite;
+   -webkit-animation:rotate .8s linear infinite;
 }
+

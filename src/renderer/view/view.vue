@@ -8,7 +8,7 @@
 <script>
     import '../utils/core';
     export default {
-        name: 'view'
+        name: 'main-view'
     }
 </script>
 <style>
@@ -23,6 +23,7 @@
         left: 0;
         bottom: 30px;
         right: 0;
-        margin: auto
+        margin: auto;
+        z-index:0
     }
 </style>

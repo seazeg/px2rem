@@ -4,16 +4,15 @@ import {
 import fs from 'fs';
 
 ipcRenderer.on('files-reply', function (event, arg) {
-    let tmp = [];
-    for (let i in arg) {
-        tmp.push(arg[i].replace(/\\/g, "/"));
+    let list = [];
+    for (let item of arg) {
+        let filepath = item.replace(/\\/g, "/")
+        converter(filepath,'r2p')
     }
-    converter(tmp,'r2p')
 });
 
-function converter(list,type) {
-    let _this = this
-    let source = readContent(list[0]);
+function converter(file,type) {
+    let source = readContent(file);
     let ratio = 100;
     if (source) {
         source = $.format(source, {
@@ -63,7 +62,7 @@ function converter(list,type) {
                 method: "cssmin"
             });
         }
-        saveContent(res,  `${list[0].split('.')[0]}_ie8.css`)
+        saveContent(res,  `${file.split('.')[0]}_ie8.css`)
     }
 
 }
