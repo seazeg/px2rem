@@ -1,7 +1,7 @@
 <template>
     <div class="layout-header">
         <div class="tools">
-            <a class="close" @click="winHandle('close')"> </a>
+            <a class="close" @click="winHandle('close')"></a>
             <a class="min" @click="winHandle('min')"></a>
         </div>
     </div>

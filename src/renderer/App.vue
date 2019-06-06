@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+  import './utils/drag'
   export default {
     name: 'px2rem'
   }

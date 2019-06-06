@@ -10,14 +10,16 @@
     align-content: stretch;
     flex-direction: column;
     overflow: hidden;
-    color: @font_color;
+    color: @font_w_color;
+    background: @main_color;
     -webkit-app-region: drag;
+    transition: all 1s;
+    -webkit-transition: all 1s;
 }
 
 //标题
 .layout-header {
-    background: @main_color;
-    color: @font_color;
+    color: @font_w_color;
     height: 40px;
     position: relative;
     top: 0;
@@ -28,22 +30,24 @@
 }
 
 .layout-header .tools {
-   margin: 5px;
-}
-.layout-header .tools>a{
-    border-radius: @tools_size;
-    width:@tools_size;
-    height:@tools_size;
-    display: inline-block;
-    margin:0 2px;
-    cursor: pointer;
+    margin: 5px;
 }
 
-.layout-header .tools .close{
+.layout-header .tools>a {
+    border-radius: @tools_size;
+    width: @tools_size;
+    height: @tools_size;
+    display: inline-block;
+    margin: 0 2px;
+    cursor: pointer;
+    color:@font_b_color;
+}
+
+.layout-header .tools .close {
     background: #e95447;
 }
 
-.layout-header .tools .min{
+.layout-header .tools .min {
     background: #f7c552;
 }
 
@@ -52,8 +56,7 @@
     -webkit-flex: 1;
     flex: 1;
     position: relative;
-    background: @main_color;
-    color: @font_color;
+    color: @font_w_color;
     -webkit-app-region: drag;
 }
 
@@ -63,4 +66,18 @@
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+//交互动画
+.dragstatus {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    opacity: 0.8;
+}
+
+.dragstatus .px2rem{
+    transition: all 1s;
+    -webkit-transition: all 1s;
+   width:220px;
+   height:220px;
 }
