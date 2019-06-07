@@ -28,7 +28,7 @@
     width: 100%;
     z-index: 0;
     -webkit-app-region: drag;
-    z-index:9999;
+    z-index: 9999;
 }
 
 .layout-footer {
@@ -91,7 +91,7 @@
     top: 50%;
 }
 
-.change{
+.change {
     width: 70px;
     height: 25px;
     background: #00ff6a;
@@ -109,11 +109,11 @@
     -webkit-transition: all 0.5s;
 }
 
-.change.r2p{
+.change.r2p {
     background: #00d9ff;
 }
 
-.change:hover{
+.change:hover {
     opacity: 1;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -129,27 +129,27 @@
 
     0% {
         transform: rotate(0deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 
     25% {
         transform: rotate(90deg);
-        background-size: 35%;
+        background-size: 25%;
     }
 
     50% {
         transform: rotate(180deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 
     75% {
         transform: rotate(270deg);
-        background-size: 25%;
+        background-size: 15%;
     }
 
     100% {
         transform: rotate(360deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 }
 
@@ -157,34 +157,44 @@
 
     0% {
         -webkit-transform: rotate(0deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 
     25% {
         -webkit-transform: rotate(90deg);
-        background-size: 35%;
+        background-size: 25%;
     }
 
     50% {
         -webkit-transform: rotate(180deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 
     75% {
         -webkit-transform: rotate(270deg);
-        background-size: 25%;
+        background-size: 15%;
     }
 
     100% {
         -webkit-transform: rotate(360deg);
-        background-size: 30%;
+        background-size: 20%;
     }
 }
 
 .dragstatus .logo {
+    width: 1000px;
+    height: 1000px;
+    background: url('../icon.png') no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    background-size: 30%;
     animation: rotate 1.8s linear infinite;
     -webkit-animation: rotate 1.8s linear infinite;
     animation-play-state: paused;
