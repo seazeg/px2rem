@@ -7,14 +7,29 @@
       </transition>
     </layout-container>
     <layout-footer>
-        Drop the CSS files to PX2REM
+      <span class="change" :class="{'r2p':buttonName=='PX←REM'}" @click="change()">{{buttonName}}</span>
+      Drop the CSS files to PX⇔REM
     </layout-footer>
   </div>
 </template>
 <script>
   import './utils/drag'
   export default {
-    name: 'px2rem'
+    name: 'px2rem',
+    data() {
+      return {
+        buttonName: 'PX→REM'
+      }
+    },
+    methods: {
+      change() {
+        if (this.buttonName == 'PX→REM') {
+          this.buttonName = 'PX←REM'
+        } else {
+          this.buttonName = 'PX→REM'
+        }
+      }
+    }
   }
 </script>
 <style lang="less">

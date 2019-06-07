@@ -22,6 +22,6 @@
         bottom: 0;
         right: 0;
         margin: auto;
-        z-index:0
+        z-index: 0
     }
 </style>

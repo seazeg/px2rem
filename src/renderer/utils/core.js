@@ -3,11 +3,17 @@ import {
 } from 'electron';
 import fs from 'fs';
 
+
 ipcRenderer.on('files-reply', function (event, arg) {
     let list = [];
     for (let item of arg) {
         let filepath = item.filePath.replace(/\\/g, "/")
-        converter(filepath,'r2p')
+        if(vm.$children[0]._data.buttonName == 'PX→REM'){
+            converter(filepath,'p2r')
+        }else{
+            converter(filepath,'r2p')
+        }
+      
     }
 });
 

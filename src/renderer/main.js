@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.prototype.egUtils = egUtils
 
 
-new Vue({
+global.vm = new Vue({
   components: { App },
   router,
   template: '<App/>'

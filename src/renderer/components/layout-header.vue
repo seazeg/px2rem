@@ -5,7 +5,7 @@
             <a class="min" @click="winHandle('min')"></a>
         </div>
         <div class="title">
-            PX2REM
+            PX⇔REM
         </div>
     </div>
 </template>

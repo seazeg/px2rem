@@ -28,12 +28,14 @@
     width: 100%;
     z-index: 0;
     -webkit-app-region: drag;
+    z-index:9999;
 }
 
 .layout-footer {
     text-align: center;
-    font-size:14px;
-    color:@font_g_color;
+    font-size: 14px;
+    line-height: 35px;
+    color: @font_g_color;
 }
 
 .layout-header .tools {
@@ -63,7 +65,7 @@
     display: inline-block;
     position: relative;
     left: 230px;
-    color:@font_g_color;
+    color: @font_g_color;
 }
 
 //工作区
@@ -89,33 +91,65 @@
     top: 50%;
 }
 
+.change{
+    width: 70px;
+    height: 25px;
+    background: #00ff6a;
+    display: inline-block;
+    position: absolute;
+    border-radius: 15px;
+    left: 10px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 27px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.change.r2p{
+    background: #00d9ff;
+}
+
+.change:hover{
+    opacity: 1;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
 //交互动画
 .dragstatus {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-
 }
 
 @keyframes rotate {
 
     0% {
-        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-size: 30%;
     }
 
     25% {
-        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        background-size: 35%;
     }
 
     50% {
-        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        background-size: 30%;
     }
 
     75% {
-        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        background-size: 25%;
     }
 
     100% {
-        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        background-size: 30%;
     }
 }
 
@@ -123,22 +157,27 @@
 
     0% {
         -webkit-transform: rotate(0deg);
+        background-size: 30%;
     }
 
     25% {
         -webkit-transform: rotate(90deg);
+        background-size: 35%;
     }
 
     50% {
         -webkit-transform: rotate(180deg);
+        background-size: 30%;
     }
 
     75% {
         -webkit-transform: rotate(270deg);
+        background-size: 25%;
     }
 
     100% {
         -webkit-transform: rotate(360deg);
+        background-size: 30%;
     }
 }
 
