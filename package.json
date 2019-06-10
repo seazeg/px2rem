@@ -1,9 +1,9 @@
 {
   "name": "px2rem",
   "productName": "px2rem",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Evan.G <seazeg@126.com>",
-  "description": "An electron-vue project",
+  "description": "px2rem",
   "license": null,
   "main": "./dist/electron/main.js",
   "scripts": {
