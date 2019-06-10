@@ -19,3 +19,7 @@ global.vm = new Vue({
   router,
   template: '<App/>'
 }).$mount('#app')
+
+if (egUtils.getOS() !== 'MacOSX') {
+  $('.logo').css('-webkit-app-region', 'no-drag')
+}

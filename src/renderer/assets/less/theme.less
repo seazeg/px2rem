@@ -1,10 +1,16 @@
 @charset "UTF-8";
 @import 'theme.config.less';
 
+body {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
 .main-container {
     height: 100%;
     display: flex;
-    display: -webkit-flex; // flex-direction: row;
+    display: -webkit-flex;
     -webkit-flex-direction: row;
     -webkit-align-content: stretch;
     align-content: stretch;
@@ -12,12 +18,16 @@
     overflow: hidden;
     color: @font_w_color;
     background: @main_color;
-    -webkit-app-region: drag;
     transition: all 1s;
     -webkit-transition: all 1s;
 }
 
 //标题
+
+.layout-header {
+    line-height: 25px;
+}
+
 .layout-header,
 .layout-footer {
     color: @font_w_color;
@@ -26,9 +36,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 0;
-    -webkit-app-region: drag;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .layout-footer {
@@ -38,10 +46,15 @@
     color: @font_g_color;
 }
 
+
+
 .layout-header .tools {
     margin: 5px;
     display: inline-block;
+    position: relative;
+    z-index: 100;
 }
+
 
 .layout-header .tools>a {
     border-radius: @tools_size;
@@ -51,21 +64,40 @@
     margin: 0 2px;
     cursor: pointer;
     color: @font_b_color;
+    text-align: center;
+    line-height: 12px;
+    -webkit-app-region: no-drag;
 }
 
 .layout-header .tools .close {
     background: #e95447;
+    border: 1px solid #eb4b3d;
 }
 
 .layout-header .tools .min {
     background: #f7c552;
+    border: 1px solid #f7c246;
 }
 
+.layout-header .tools:hover .close {
+    background: #e95447 + 5;
+    border-color: #eb4b3d + 30;
+}
+
+.layout-header .tools:hover .min {
+    background: #f7c552 + 5;
+    border-color: #f7c246 + 30;
+}
+
+
 .layout-header .title {
-    display: inline-block;
-    position: relative;
-    left: 230px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 5px;
     color: @font_g_color;
+    z-index: 0;
 }
 
 //工作区
@@ -74,7 +106,6 @@
     flex: 1;
     position: relative;
     color: @font_w_color;
-    -webkit-app-region: drag;
 }
 
 .layout-container {
@@ -82,13 +113,12 @@
     flex: 1;
     position: relative;
     color: @font_w_color;
-    -webkit-app-region: drag;
+
 }
 
 .layout-container .drop-box {
-    position: relative;
-    left: -200px;
-    top: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 .change {
@@ -107,6 +137,7 @@
     opacity: 0.8;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
+    -webkit-app-region: no-drag;
 }
 
 .change.r2p {
@@ -125,67 +156,34 @@
     -webkit-transition: all 0.5s;
 }
 
-@keyframes rotate {
+@keyframes jump {
 
     0% {
-        transform: rotate(0deg);
-        background-size: 20%;
+        bottom: 0
     }
 
     25% {
-        transform: rotate(90deg);
-        background-size: 25%;
+        bottom: 30px
     }
 
     50% {
-        transform: rotate(180deg);
-        background-size: 20%;
+        bottom: 0
     }
 
     75% {
-        transform: rotate(270deg);
-        background-size: 15%;
+        bottom: 30px
     }
 
     100% {
-        transform: rotate(360deg);
-        background-size: 20%;
+        bottom: 0
     }
 }
 
-@-webkit-keyframes rotate {
-
-    0% {
-        -webkit-transform: rotate(0deg);
-        background-size: 20%;
-    }
-
-    25% {
-        -webkit-transform: rotate(90deg);
-        background-size: 25%;
-    }
-
-    50% {
-        -webkit-transform: rotate(180deg);
-        background-size: 20%;
-    }
-
-    75% {
-        -webkit-transform: rotate(270deg);
-        background-size: 15%;
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        background-size: 20%;
-    }
-}
 
 .dragstatus .logo {
-    width: 1000px;
-    height: 1000px;
     background: url('../icon.png') no-repeat;
     background-position: center;
+    background-size: 25%;
     position: absolute;
     top: 0;
     left: 0;
@@ -195,8 +193,8 @@
     z-index: 0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    animation: rotate 1.8s linear infinite;
-    -webkit-animation: rotate 1.8s linear infinite;
+    animation: jump 0.5s linear infinite;
+    -webkit-animation: jump 0.5s linear infinite;
     animation-play-state: paused;
     -webkit-animation-play-state: paused;
 }

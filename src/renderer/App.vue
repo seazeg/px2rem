@@ -14,6 +14,7 @@
 </template>
 <script>
   import './utils/drag'
+  let timer = null
   export default {
     name: 'px2rem',
     data() {
@@ -24,10 +25,19 @@
     methods: {
       change() {
         if (this.buttonName == 'PX→REM') {
-          this.buttonName = 'PX←REM'
+          this.buttonName = 'PX←REM';
+          this.animate();
         } else {
-          this.buttonName = 'PX→REM'
+          this.buttonName = 'PX→REM';
+          this.animate();
         }
+      },
+      animate() {
+        clearInterval(timer);
+        vm.$logo.css('animation-play-state', 'running');
+        timer = setInterval(() => {
+          vm.$logo.css('animation-play-state', 'paused');
+        }, 500);
       }
     }
   }

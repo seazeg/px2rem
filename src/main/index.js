@@ -19,13 +19,14 @@ const winURL = process.env.NODE_ENV === 'development' ?
   `http://localhost:9080` :
   `file://${__dirname}/index.html`
 
+
 function createWindow() {
-  /**
-   * Initial window options
-   */
+  let width = 550,
+    height = 320;
+
   mainWindow = new BrowserWindow({
-    height: 370,
-    width: 600,
+    height: height,
+    width: width,
     useContentSize: true,
     resizable: false,
     fullscreen: false,
