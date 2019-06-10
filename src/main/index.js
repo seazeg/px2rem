@@ -37,6 +37,7 @@ function createWindow() {
     fullscreen: false,
     frame: false,
     show: false,
+    backgroundColor:'#313131',
     webPreferences: {
       webSecurity: false
     }
