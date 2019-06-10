@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-  import './utils/drag'
+  import './libs/drag'
   let timer = null
   export default {
     name: 'px2rem',

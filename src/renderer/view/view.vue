@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-    import '../utils/core';
+    import '../libs/core';
     export default {
         name: 'main-view'
     }
