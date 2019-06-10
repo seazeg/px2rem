@@ -24,6 +24,11 @@ function createWindow() {
   let width = 550,
     height = 320;
 
+  if (process.platform === 'win32') {
+    width = 450;
+    height = 250;
+  }
+
   mainWindow = new BrowserWindow({
     height: height,
     width: width,
@@ -31,12 +36,17 @@ function createWindow() {
     resizable: false,
     fullscreen: false,
     frame: false,
+    show: false,
     webPreferences: {
       webSecurity: false
     }
   })
 
   // mainWindow.webContents.openDevTools()
+
+  mainWindow.on('ready-to-show', function () {
+    mainWindow.show();
+  })
 
   mainWindow.loadURL(winURL)
 
