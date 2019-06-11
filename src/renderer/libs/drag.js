@@ -24,11 +24,11 @@ window.onload = function () {
                     errorFlag = true;
                 }
             }
-            if (errorFlag) {
-                new Notification('PX⇔REM', {
-                    body: '⚠️已过滤掉非css文件'
-                })
-            }
+            // if (errorFlag) {
+            //     new Notification('PX⇔REM', {
+            //         body: '⚠️已过滤掉非css文件'
+            //     })
+            // }
             ipcRenderer.send('files-message', JSON.stringify(fileList));
             setTimeout(() => {
                 logo.css('animation-play-state', 'paused')

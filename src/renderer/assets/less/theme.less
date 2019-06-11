@@ -62,7 +62,7 @@ body {
     height: @tools_size;
     display: inline-block;
     margin: 0 2px;
-    cursor: pointer;
+    // cursor: pointer;
     color: @font_b_color;
     text-align: center;
     line-height: 12px;
@@ -89,6 +89,11 @@ body {
     border-color: #f7c246 + 20;
 }
 
+.layout-header .tools > a:active {
+    opacity: 0.6
+}
+
+
 
 .layout-header .title {
     display: block;
@@ -98,7 +103,7 @@ body {
     top: 5px;
     color: @font_g_color;
     z-index: 0;
-    font-size:12px;
+    font-size: 12px;
 }
 
 //工作区
