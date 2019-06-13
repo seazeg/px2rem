@@ -7,6 +7,10 @@ body {
     cursor: default;
 }
 
+.hide{
+    display: none;
+}
+
 .main-container {
     height: 100%;
     display: flex;
@@ -135,6 +139,7 @@ body {
     position: absolute;
     border-radius: 15px;
     left: 10px;
+    top: 5px;
     color: #000;
     font-size: 12px;
     font-weight: 400;
@@ -204,3 +209,47 @@ body {
     animation-play-state: paused;
     -webkit-animation-play-state: paused;
 }
+
+.egg{
+    text-align: center;
+    position: relative;
+}
+
+.egg > canvas{
+    background: #535353;
+}
+
+.egg >.start,.egg >.pause{
+    width: 70px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 15px;
+    left: 10px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 27px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -webkit-app-region: no-drag;
+}
+
+.egg >.start{
+    background: #00ff6a;
+    bottom: 40px;
+}
+.egg >.pause {
+    background: #00d9ff;
+    bottom: 8px;
+}
+
+.egg >.start:hover,.egg >.pause:hover {
+    opacity: 1;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+

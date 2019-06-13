@@ -12,8 +12,19 @@ export default new Router({
     // },
     {
       path: '/',
-      name: 'px2rem',
-      component: require('@/view/view').default
+      name: 'main',
+      component: require('@/view/view').default,
+      meta:{
+        keepAlive:true
+      }
+    },
+    {
+      path:'/egg',
+      name:'egg',
+      component:require('@/view/egg').default,
+      meta:{
+        keepAlive:false
+      }
     },
     {
       path: '*',

@@ -22,12 +22,12 @@ const winURL = process.env.NODE_ENV === 'development' ?
 
 function createWindow() {
   let width = 550,
-    height = 320;
+    height = 374;
 
-  if (process.platform === 'win32') {
-    width = 450;
-    height = 250;
-  }
+  // if (process.platform === 'win32') {
+  //   width = 450;
+  //   height = 250;
+  // }
 
   mainWindow = new BrowserWindow({
     height: height,

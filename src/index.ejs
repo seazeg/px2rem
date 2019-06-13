@@ -22,11 +22,13 @@
     <% if (process.env.NODE_ENV !== 'development') { %>
     <script src="../electron/static/jquery-2.0.3.min.js"></script>
     <script src="../electron/static/jquery-extend.js"></script>
+    <script src="../electron/static/egg.js"></script>
     <% } %>
 
     <% if (process.env.NODE_ENV === 'development') { %>
       <script src="../static/jquery-2.0.3.min.js"></script>
       <script src="../static/jquery-extend.js"></script>
+      <script src="../static/egg.js"></script>
     <% } %>
  
   </body>
