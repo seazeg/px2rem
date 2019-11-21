@@ -30,7 +30,7 @@ function converter(file,type) {
         if (type == 'p2r') {
             for (let i = 0; i < len; i++) {
                 let line = arr[i];
-                res += line.replace(/([1-9]\d*.\d*|0.\d*[1-9]\d*|\d*[1-9]\d*)px/g, function (px) {
+                res += line.replace(/([1-9]\d*.\d*|0?.\d*[1-9]\d*|\d*[1-9]\d*)rem/g, function (px) {
                     if (!!px) {
                         if (!/border:/ig.test(line)) {
                             return (parseFloat(px) / parseInt(ratio)) + "rem";
@@ -45,7 +45,7 @@ function converter(file,type) {
         } else if (type == 'r2p') {
             for (let i = 0; i < len; i++) {
                 let line = arr[i];
-                res += line.replace(/([1-9]\d*.\d*|0.\d*[1-9]\d*|\d*[1-9]\d*)rem/g, function (rem) {
+                res += line.replace(/([1-9]\d*.\d*|0?.\d*[1-9]\d*|\d*[1-9]\d*)rem/g, function (rem) {
                     if (!!rem) {
                         if (!/border:/ig.test(line)) {
                             return (parseFloat(rem) * parseInt(ratio)) + "px";
